@@ -10,6 +10,23 @@
         formControlName="convertNumber"
         min="0"
       />
+
+      <div
+        *ngIf="
+          formNumberConvert.controls['convertNumber'].invalid &&
+          (formNumberConvert.controls['convertNumber'].dirty ||
+            formNumberConvert.controls['convertNumber'].touched)
+        "
+        class="error-input"
+      >
+        <div *ngIf="formNumberConvert.controls['convertNumber'].errors.required">
+          Un input est requis
+        </div>
+        <div *ngIf="formNumberConvert.controls['convertNumber'].errors.min">
+          L'input ne peut être négatif'
+        </div>
+      </div>
+
       <button
         class="btn btn-primary submit"
         type="submit"

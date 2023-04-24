@@ -5,3 +5,7 @@ form {
 .submit {
   margin-top: 15px;
 }
+
+.error-input {
+  color: red;
+}
